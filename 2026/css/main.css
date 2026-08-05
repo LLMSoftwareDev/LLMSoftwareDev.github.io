@@ -343,6 +343,128 @@ p {
   vertical-align: 0.12em;
 }
 
+.registration-card {
+  position: relative;
+  display: grid;
+  padding: 44px 48px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 212, 229, 0.2);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(99, 212, 229, 0.18), transparent 18rem),
+    linear-gradient(135deg, var(--navy-950), var(--navy-800));
+  box-shadow: 0 22px 56px rgba(7, 26, 44, 0.2);
+  color: var(--surface);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+}
+
+.registration-card::after {
+  position: absolute;
+  right: -90px;
+  bottom: -150px;
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(232, 199, 155, 0.16);
+  border-radius: 50%;
+  content: "";
+}
+
+.registration-copy,
+.registration-action {
+  position: relative;
+  z-index: 1;
+}
+
+.registration-copy {
+  max-width: 800px;
+}
+
+.registration-status {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  border: 1px solid rgba(99, 212, 229, 0.34);
+  border-radius: 999px;
+  background: rgba(99, 212, 229, 0.1);
+  color: var(--cyan-400);
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan-400);
+  box-shadow: 0 0 0 5px rgba(99, 212, 229, 0.12);
+}
+
+.registration-card p {
+  max-width: 790px;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.registration-card .registration-deadline {
+  margin-bottom: 14px;
+  color: var(--surface);
+  font-size: clamp(21px, 2.6vw, 29px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.registration-card .registration-note {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+}
+
+.registration-note a {
+  border-bottom: 1px solid rgba(99, 212, 229, 0.62);
+  color: var(--cyan-400);
+}
+
+.registration-note a:hover,
+.registration-note a:focus {
+  color: var(--surface);
+}
+
+.registration-button {
+  display: inline-flex;
+  min-width: 148px;
+  padding: 14px 18px;
+  border: 1px solid var(--gold-300);
+  border-radius: 11px;
+  background: var(--gold-300);
+  box-shadow: 0 10px 28px rgba(7, 26, 44, 0.24);
+  color: var(--navy-950);
+  font-size: 14px;
+  font-weight: 780;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.registration-button:hover,
+.registration-button:focus {
+  border-color: var(--surface);
+  background: var(--surface);
+  color: var(--navy-950);
+  transform: translateY(-2px);
+}
+
 .about-card,
 .schedule-card {
   border: 1px solid rgba(18, 54, 82, 0.1);
@@ -749,6 +871,24 @@ p {
 
   .section-heading {
     margin-bottom: 20px;
+  }
+
+  .registration-card {
+    padding: 30px 25px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .registration-card p {
+    font-size: 14px;
+  }
+
+  .registration-card .registration-deadline {
+    font-size: 21px;
+  }
+
+  .registration-button {
+    width: 100%;
   }
 
   .about-card {
