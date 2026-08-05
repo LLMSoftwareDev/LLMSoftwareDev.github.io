@@ -513,6 +513,53 @@ p {
   text-justify: inter-word;
 }
 
+.about-details {
+  display: grid;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.about-card .about-details p {
+  margin: 0;
+  color: var(--ink-700);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.about-invitation {
+  display: grid;
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid rgba(216, 155, 87, 0.24);
+  border-radius: 12px;
+  background: rgba(216, 155, 87, 0.09);
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 13px;
+}
+
+.about-invitation .fa {
+  margin-top: 4px;
+  color: var(--gold-500);
+  font-size: 18px;
+  text-align: center;
+}
+
+.about-card .about-invitation p {
+  margin: 0;
+  color: var(--ink-700);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.about-invitation strong {
+  color: var(--navy-900);
+  font-weight: 740;
+}
+
 .schedule-card {
   overflow: hidden;
 }
@@ -912,6 +959,26 @@ p {
   .about-card p {
     font-size: 16px;
     line-height: 1.75;
+  }
+
+  .about-details {
+    margin-top: 24px;
+    padding-top: 24px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-card .about-details p {
+    font-size: 14px;
+  }
+
+  .about-invitation {
+    margin-top: 22px;
+    padding: 17px 16px;
+  }
+
+  .about-card .about-invitation p {
+    font-size: 13px;
   }
 
   .table.schedule th,
