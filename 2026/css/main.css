@@ -624,13 +624,16 @@ p {
 }
 
 .speakers-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.speakers-grid > .speaker-profile-card:last-child:nth-child(odd) {
-  width: calc((100% - 22px) / 2);
-  grid-column: 1 / -1;
-  justify-self: center;
+.speakers-grid > .speaker-profile-card {
+  grid-column: span 2;
+}
+
+.speakers-grid > .speaker-profile-card:nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 2 / span 2;
 }
 
 .people-card {
@@ -798,6 +801,40 @@ p {
   color: var(--ink-500);
   cursor: default;
   transform: none;
+}
+
+.speakers-grid .people-card {
+  min-height: 0;
+  padding: 22px 18px 20px;
+}
+
+.speakers-grid .people-card:hover {
+  transform: translateY(-2px);
+}
+
+.speakers-grid .people-pic {
+  width: 108px;
+  height: 108px;
+  border-width: 4px;
+}
+
+.speakers-grid .people-name {
+  margin-top: 14px;
+}
+
+.speakers-grid .people-name h6 {
+  margin-top: 4px;
+}
+
+.speakers-grid .speaker-profile-fields {
+  margin-top: 16px;
+  padding-top: 13px;
+  gap: 8px;
+}
+
+.speakers-grid .speaker-profile-field {
+  padding: 9px 10px;
+  gap: 2px;
 }
 
 body.speaker-dialog-open {
@@ -1038,7 +1075,17 @@ body.speaker-dialog-open {
   }
 
   .speakers-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .speakers-grid > .speaker-profile-card,
+  .speakers-grid > .speaker-profile-card:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: span 2;
+  }
+
+  .speakers-grid > .speaker-profile-card:last-child:nth-child(odd) {
+    width: auto;
+    grid-column: 2 / span 2;
   }
 }
 
@@ -1210,9 +1257,11 @@ body.speaker-dialog-open {
     gap: 14px;
   }
 
+  .speakers-grid > .speaker-profile-card,
+  .speakers-grid > .speaker-profile-card:nth-last-child(2):nth-child(3n + 1),
   .speakers-grid > .speaker-profile-card:last-child:nth-child(odd) {
     width: 100%;
-    grid-column: auto;
+    grid-column: 1;
   }
 
   .people-card {
@@ -1247,6 +1296,29 @@ body.speaker-dialog-open {
   .speaker-profile-fields {
     margin-top: 20px;
     grid-column: 1 / -1;
+  }
+
+  .speakers-grid .people-card {
+    padding: 20px 18px;
+  }
+
+  .speakers-grid .people-pic {
+    width: 88px;
+    height: 88px;
+  }
+
+  .speakers-grid .people-name {
+    margin: 0;
+  }
+
+  .speakers-grid .speaker-profile-content {
+    grid-template-columns: 88px 1fr;
+  }
+
+  .speakers-grid .speaker-profile-fields {
+    margin-top: 14px;
+    padding-top: 12px;
+    gap: 8px;
   }
 
   .speaker-dialog-content {
@@ -1307,6 +1379,19 @@ body.speaker-dialog-open {
 
   .speaker-profile-fields {
     grid-template-columns: 1fr;
+  }
+
+  .speakers-grid .people-card {
+    padding: 18px 16px;
+  }
+
+  .speakers-grid .people-pic {
+    width: 76px;
+    height: 76px;
+  }
+
+  .speakers-grid .speaker-profile-content {
+    grid-template-columns: 76px 1fr;
   }
 
   .speaker-dialog {
