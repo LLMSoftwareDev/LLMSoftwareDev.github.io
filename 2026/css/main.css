@@ -636,6 +636,10 @@ p {
   grid-column: 2 / span 2;
 }
 
+.speakers-grid > .speaker-profile-card:last-child:nth-child(3n + 1) {
+  grid-column: 3 / span 2;
+}
+
 .people-card {
   position: relative;
   display: flex;
@@ -1283,6 +1287,7 @@ body.speaker-dialog-open {
 
   .speakers-grid > .speaker-profile-card,
   .speakers-grid > .speaker-profile-card:nth-last-child(2):nth-child(3n + 1),
+  .speakers-grid > .speaker-profile-card:last-child:nth-child(3n + 1),
   .speakers-grid > .speaker-profile-card:last-child:nth-child(odd) {
     width: 100%;
     grid-column: 1;
