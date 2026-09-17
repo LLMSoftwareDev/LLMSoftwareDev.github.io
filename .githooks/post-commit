@@ -9,7 +9,16 @@ repo_git() {
 }
 
 branch=$(repo_git branch --show-current)
+repo_root=$(repo_git rev-parse --show-toplevel)
+repo_gh_config="$repo_root/.git/gh"
 
 if [ "$branch" = "main" ]; then
-  repo_git push origin "$branch"
+  if command -v gh >/dev/null 2>&1 && [ -d "$repo_gh_config" ]; then
+    GH_CONFIG_DIR="$repo_gh_config" repo_git \
+      -c credential.helper= \
+      -c credential.helper='!gh auth git-credential' \
+      push origin "$branch"
+  else
+    repo_git push origin "$branch"
+  fi
 fi

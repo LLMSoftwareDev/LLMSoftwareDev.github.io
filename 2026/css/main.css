@@ -947,6 +947,30 @@ body.speaker-dialog-open {
   text-underline-offset: 3px;
 }
 
+.speaker-dialog-bios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.speaker-dialog-bio {
+  padding: 18px;
+  border: 1px solid rgba(18, 54, 82, 0.1);
+  border-radius: 14px;
+  background: rgba(241, 248, 250, 0.66);
+}
+
+.speaker-dialog-bio h4 {
+  margin: 0 0 10px;
+  color: var(--navy-900);
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.speaker-dialog-bio p {
+  text-align: left;
+}
+
 .speaker-more {
   display: inline-flex;
   margin-top: 22px;
@@ -1323,6 +1347,10 @@ body.speaker-dialog-open {
 
   .speaker-dialog-content {
     padding: 38px 28px 34px;
+  }
+
+  .speaker-dialog-bios {
+    grid-template-columns: 1fr;
   }
 
   .sponsor-grid {
