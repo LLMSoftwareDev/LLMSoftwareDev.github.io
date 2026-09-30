@@ -571,6 +571,8 @@ p {
 
 .table.schedule {
   width: 100%;
+  min-width: 850px;
+  table-layout: fixed;
   margin: 0;
   border-collapse: collapse;
 }
@@ -593,6 +595,14 @@ p {
   text-transform: uppercase;
 }
 
+.table.schedule th:nth-child(2) {
+  width: 42%;
+}
+
+.table.schedule th:nth-child(3) {
+  width: 25%;
+}
+
 .table.schedule td {
   color: var(--ink-700);
   font-size: 15px;
@@ -612,9 +622,64 @@ p {
 
 .table.schedule th:first-child,
 .table.schedule td:first-child {
-  width: 72px;
+  width: 118px;
   color: var(--gold-500);
   font-weight: 760;
+}
+
+.table.schedule .schedule-day th {
+  width: auto;
+  padding: 12px 24px;
+  background: var(--navy-800);
+  color: var(--gold-300);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.schedule-day th span {
+  margin-left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.table.schedule .schedule-time {
+  white-space: nowrap;
+}
+
+.table.schedule .schedule-break,
+.table.schedule .schedule-affiliation {
+  color: var(--ink-500);
+}
+
+.table.schedule .schedule-affiliation {
+  font-size: 12px;
+}
+
+.schedule-detail-trigger {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--navy-900);
+  font: inherit;
+  font-weight: 650;
+  line-height: 1.45;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: rgba(20, 135, 158, 0.42);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.schedule-detail-trigger:hover,
+.schedule-detail-trigger:focus {
+  color: var(--navy-800);
+  text-decoration-color: var(--gold-500);
+}
+
+.schedule-detail-trigger:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--navy-800);
+  outline-offset: 3px;
 }
 
 .people-grid {
@@ -975,6 +1040,16 @@ body.speaker-dialog-open {
   text-align: left;
 }
 
+.speaker-dialog[data-detail-view="bio"] .speaker-dialog-section:not([hidden]) {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.speaker-dialog[data-detail-view="bio"] .speaker-dialog-bios {
+  grid-template-columns: 1fr;
+}
+
 .speaker-more {
   display: inline-flex;
   margin-top: 22px;
@@ -1275,7 +1350,15 @@ body.speaker-dialog-open {
 
   .table.schedule th:first-child,
   .table.schedule td:first-child {
-    width: 44px;
+    width: 118px;
+  }
+
+  .table.schedule td {
+    white-space: normal;
+  }
+
+  .table.schedule .schedule-time {
+    white-space: nowrap;
   }
 
   .people-grid,
