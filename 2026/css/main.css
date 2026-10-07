@@ -567,6 +567,7 @@ p {
 .schedule-card .table-responsive {
   margin: 0;
   border: 0;
+  overflow-x: auto;
 }
 
 .table.schedule {
@@ -622,7 +623,7 @@ p {
 
 .table.schedule th:first-child,
 .table.schedule td:first-child {
-  width: 118px;
+  width: 130px;
   color: var(--gold-500);
   font-weight: 760;
 }
@@ -1350,14 +1351,15 @@ body.speaker-dialog-open {
 
   .table.schedule th:first-child,
   .table.schedule td:first-child {
-    width: 118px;
+    width: 130px;
   }
 
-  .table.schedule td {
+  .schedule-card .table-responsive > .table.schedule > tbody > tr > td {
     white-space: normal;
+    overflow-wrap: anywhere;
   }
 
-  .table.schedule .schedule-time {
+  .schedule-card .table-responsive > .table.schedule > tbody > tr > td.schedule-time {
     white-space: nowrap;
   }
 
